@@ -1,0 +1,72 @@
+import "./App.css";
+import MovieCard from "./components/MovieCard";
+import movies from "./constants/movieList";
+import { useState } from "react";
+
+function App() {
+  const [movieList, setMovieList] = useState(movies);
+  const [search, setSearch] = useState("")
+  const [newMovie, setNewMovie] = useState({
+    name: "",
+    description: "",
+    posteUrl: "",
+    rating: 0,
+  });
+  
+  const handleChange  = ( event ) => {
+    const {name, value} =event.target
+   setNewMovie({...newMovie,[name]:value})
+  }
+
+  const handleSubmit = () => {
+  setMovieList([...movieList, newMovie])
+  setNewMovie({
+    name: "",
+    description: "",
+    posteUrl: "",
+    rating: 0,
+  }
+  )
+  
+  }
+  console.log(newMovie)
+  return (
+    <div className="App">
+
+      {movieList
+      .filter((el)=> el.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+      .map((movie) => (
+        <MovieCard movie={movie} />
+      ))}
+      <div>
+  
+        <div>
+          
+           <label> Name : </label>
+            <input onChange={handleChange} type="text" name="title" />
+         </div>
+          <div>
+            <label>Description:</label>
+
+            <input onChange={handleChange} type="text" name="description" />
+          </div>
+          <div> 
+           <label> poste Url :</label>
+            <input onChange={handleChange} type="text" name="posteUrl" />
+          </div>
+
+          <div> 
+           <label> Rating:</label>
+            <input onChange={handleChange} type="number" name="rating" max={10} min={0}/>
+          </div>
+
+          <button onClick={handleSubmit}>add movie</button>
+      </div>
+      <div className="shearch">
+        Recherche <input onChange={(event)=>setSearch(event.target.value)} value={search}/>
+      </div>
+    </div>
+  );
+}
+
+export default App;

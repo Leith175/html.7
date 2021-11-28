@@ -1,0 +1,15 @@
+
+function MovieCard(props) {
+    const {title, description, posteUrl, rating} = props.movie
+  return (
+    <div className="movie-card" >
+     <img classname="poster"src={posteUrl} height="250px" witdh="250px" />
+     <h2 className="nom-du-film">{title}</h2>
+     <img src="etoile.png" height="20px" witdh="20px"/> <h3> {rating}</h3>
+     <p>{description}</p>
+   </div>
+    
+  );
+}
+
+export default MovieCard;

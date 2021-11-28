@@ -1,0 +1,10 @@
+const movies = [ {
+title:"SquidGame", description:"Cette série raconte l'histoire d'un groupe de personnes,fortement endettées, voire ruinées, qui risquent leur vie dans un jeu de survie mystérieux avec comme récompense une somme énorme.", rating:8.1, posteUrl:"squid-game.jpg"    
+},
+{
+title:"TED 1", description:"À 8 ans, le petit John Bennett fit le voeu que son ours en peluche de Noël s’anime et devienne son meilleur ami pour la vie, et il vit son voeu exaucé. Presque 30 ans plus tard, l’histoire n’a plus vraiment les allures d’un conte de Noël. L’omniprésence de Ted aux côtés de John pèse lourdement sur...", rating:6.3, posteUrl:"ted-1.jpg"    
+},
+{     
+title:"TED 2", description:"Les deux meilleurs amis du monde vont cette fois-ci s’aventurer en territoire totalement inconnu : le moment est venu de légaliser l’existence de Ted.Nos deux compères vivent toujours à Boston, mais alors que John est désormais célibataire, Ted a emménagé avec Tamy Lynn, la bombe de ses rêves.Alors qu’ils traversent leurs premiers orages maritaux, ils décident de faire...", rating:6.9, posteUrl:"ted-2.jpg"    
+},]
+export default movies
